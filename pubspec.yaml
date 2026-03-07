@@ -1,6 +1,7 @@
 name: custom_image
 description: A flexible Flutter image widget supporting SVG, VectorGraphics, network, and asset images with gradient color support.
-version: 0.0.1
+version: 0.0.2
+
 homepage: https://github.com/YOUR_USERNAME/custom_image
 repository: https://github.com/YOUR_USERNAME/custom_image
 issue_tracker: https://github.com/YOUR_USERNAME/custom_image/issues
