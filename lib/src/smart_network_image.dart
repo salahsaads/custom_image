@@ -8,15 +8,15 @@ import 'package:flutter/material.dart';
 ///
 /// Example:
 /// ```dart
-/// CustomNetworkImage(
+/// SmartNetworkImage(
 ///   image: 'https://example.com/photo.jpg',
 ///   width: 100,
 ///   height: 100,
 ///   radius: 12,
 /// )
 /// ```
-class CustomNetworkImage extends StatelessWidget {
-  const CustomNetworkImage({
+class SmartNetworkImage extends StatelessWidget {
+  const SmartNetworkImage({
     super.key,
     required this.image,
     this.fit,
@@ -59,9 +59,7 @@ class CustomNetworkImage extends StatelessWidget {
       width: width,
       imageUrl: image,
       fit: fit ?? BoxFit.cover,
-      placeholder: placeholder != null
-          ? (context, url) => placeholder!
-          : null,
+      placeholder: placeholder != null ? (context, url) => placeholder! : null,
       errorWidget: errorWidget != null
           ? (context, url, error) => errorWidget!
           : (context, url, error) => SizedBox(
@@ -84,4 +82,4 @@ class CustomNetworkImage extends StatelessWidget {
       ),
     );
   }
-} 
+}

@@ -1,6 +1,6 @@
-# custom_image
+# smart_image
 
-[![pub package](https://img.shields.io/pub/v/custom_image.svg)](https://pub.dev/packages/custom_image)
+[![pub package](https://img.shields.io/pub/v/smart_image.svg)](https://pub.dev/packages/smart_image)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A powerful and flexible Flutter image widget that handles all your image needs in one place.
@@ -22,7 +22,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  custom_image: ^0.0.1
+  smart_image: ^0.0.2
 ```
 
 Then run:
@@ -36,13 +36,13 @@ flutter pub get
 Import the package:
 
 ```dart
-import 'package:custom_image/custom_image.dart';
+import 'package:smart_image/smart_image.dart';
 ```
 
 ### Asset Image (PNG / JPG / WebP)
 
 ```dart
-CustomImage(
+SmartImage(
   image: 'assets/images/photo.png',
   width: 100,
   height: 100,
@@ -53,7 +53,7 @@ CustomImage(
 ### SVG Asset
 
 ```dart
-CustomImage(
+SmartImage(
   image: 'assets/icons/home.svg',
   width: 24,
   height: 24,
@@ -64,7 +64,7 @@ CustomImage(
 ### Vector Graphic (.vec) — Best Performance
 
 ```dart
-CustomImage(
+SmartImage(
   image: 'assets/icons/star.vec',
   width: 32,
   height: 32,
@@ -75,7 +75,7 @@ CustomImage(
 ### Network Image with Caching
 
 ```dart
-CustomImage(
+SmartImage(
   image: 'https://example.com/photo.jpg',
   width: 200,
   height: 200,
@@ -86,7 +86,7 @@ CustomImage(
 ### Gradient Color Overlay
 
 ```dart
-CustomImage(
+SmartImage(
   image: 'assets/icons/heart.svg',
   width: 48,
   height: 48,
@@ -97,7 +97,7 @@ CustomImage(
 ### Custom Error & Placeholder
 
 ```dart
-CustomImage(
+SmartImage(
   image: 'https://example.com/photo.jpg',
   width: 100,
   height: 100,
@@ -108,7 +108,7 @@ CustomImage(
 
 ## 🔧 Parameters
 
-### `CustomImage`
+### `SmartImage`
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -122,7 +122,7 @@ CustomImage(
 | `errorWidget` | `Widget?` | `SizedBox` | Shown on load error |
 | `placeholderWidget` | `Widget?` | `SizedBox` | Shown while loading (.vec) |
 
-### `CustomNetworkImage`
+### `SmartNetworkImage`
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -137,9 +137,9 @@ CustomImage(
 
 ## 🏗️ How It Works
 
-`CustomImage` automatically detects the image type by:
+`SmartImage` automatically detects the image type by:
 
-1. Checking if the URL starts with `http://` or `https://` → uses `CustomNetworkImage`
+1. Checking if the URL starts with `http://` or `https://` → uses `SmartNetworkImage`
 2. Reading the file extension → picks the right renderer:
    - `.vec` → `VectorGraphic` (fastest)
    - `.svg` → `SvgPicture`

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:custom_image/custom_image.dart';
+import 'package:smart_image/smart_image.dart';
 
 void main() {
-  group('CustomImage', () {
+  group('SmartImage', () {
     testWidgets('renders with a network URL', (tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: Scaffold(
-            body: CustomImage(
+            body: SmartImage(
               image: 'https://example.com/image.png',
               width: 100,
               height: 100,
@@ -16,14 +16,14 @@ void main() {
           ),
         ),
       );
-      expect(find.byType(CustomImage), findsOneWidget);
+      expect(find.byType(SmartImage), findsOneWidget);
     });
 
     testWidgets('renders errorWidget when provided', (tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: Scaffold(
-            body: CustomImage(
+            body: SmartImage(
               image: 'assets/nonexistent.png',
               width: 50,
               height: 50,
@@ -32,11 +32,11 @@ void main() {
           ),
         ),
       );
-      expect(find.byType(CustomImage), findsOneWidget);
+      expect(find.byType(SmartImage), findsOneWidget);
     });
 
     test('isNetworkImage returns true for http URLs', () {
-      const widget = CustomImage(image: 'http://example.com/img.png');
+      const widget = SmartImage(image: 'http://example.com/img.png');
       expect(
         widget.image.startsWith('http://') ||
             widget.image.startsWith('https://'),
@@ -45,7 +45,7 @@ void main() {
     });
 
     test('isNetworkImage returns false for asset paths', () {
-      const widget = CustomImage(image: 'assets/icons/home.svg');
+      const widget = SmartImage(image: 'assets/icons/home.svg');
       expect(
         widget.image.startsWith('http://') ||
             widget.image.startsWith('https://'),

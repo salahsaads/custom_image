@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vector_graphics/vector_graphics.dart';
-import 'package:custom_image/src/custom_network_image.dart';
+import 'package:smart_image/src/smart_network_image.dart';
 
 /// A universal image widget that handles asset images (PNG, JPG, WebP, SVG, VEC)
 /// and network images, with optional gradient color support.
 ///
 /// Example:
 /// ```dart
-/// CustomImage(
+/// SmartImage(
 ///   image: 'assets/icons/home.svg',
 ///   width: 24,
 ///   height: 24,
 ///   color: Colors.blue,
 /// )
 /// ```
-class CustomImage extends StatelessWidget {
-  const CustomImage({
+class SmartImage extends StatelessWidget {
+  const SmartImage({
     super.key,
     required this.image,
     this.fit,
@@ -105,9 +105,8 @@ class CustomImage extends StatelessWidget {
           height: height,
           width: width,
           fit: fit ?? BoxFit.cover,
-          colorFilter: color != null
-              ? ColorFilter.mode(color!, BlendMode.srcIn)
-              : null,
+          colorFilter:
+              color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         );
         break;
 
@@ -134,7 +133,7 @@ class CustomImage extends StatelessWidget {
   }
 
   Widget _buildNetworkImage() {
-    final imageWidget = CustomNetworkImage(
+    final imageWidget = SmartNetworkImage(
       image: image,
       fit: fit,
       height: height,
@@ -161,4 +160,4 @@ class CustomImage extends StatelessWidget {
     }
     return child;
   }
-} 
+}
