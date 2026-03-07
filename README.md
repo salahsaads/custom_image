@@ -22,7 +22,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  omni_image: ^0.0.3
+  omni_image: ^0.0.4
 ```
 
 Then run:
