@@ -1,6 +1,6 @@
-# smart_image
+# omni_image
 
-[![pub package](https://img.shields.io/pub/v/smart_image.svg)](https://pub.dev/packages/smart_image)
+[![pub package](https://img.shields.io/pub/v/omni_image.svg)](https://pub.dev/packages/omni_image)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A powerful and flexible Flutter image widget that handles all your image needs in one place.
@@ -22,7 +22,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  smart_image: ^0.0.2
+  omni_image: ^0.0.3
 ```
 
 Then run:
@@ -36,13 +36,13 @@ flutter pub get
 Import the package:
 
 ```dart
-import 'package:smart_image/smart_image.dart';
+import 'package:omni_image/omni_image.dart';
 ```
 
 ### Asset Image (PNG / JPG / WebP)
 
 ```dart
-SmartImage(
+OmniImage(
   image: 'assets/images/photo.png',
   width: 100,
   height: 100,
@@ -53,7 +53,7 @@ SmartImage(
 ### SVG Asset
 
 ```dart
-SmartImage(
+OmniImage(
   image: 'assets/icons/home.svg',
   width: 24,
   height: 24,
@@ -64,7 +64,7 @@ SmartImage(
 ### Vector Graphic (.vec) — Best Performance
 
 ```dart
-SmartImage(
+OmniImage(
   image: 'assets/icons/star.vec',
   width: 32,
   height: 32,
@@ -75,7 +75,7 @@ SmartImage(
 ### Network Image with Caching
 
 ```dart
-SmartImage(
+OmniImage(
   image: 'https://example.com/photo.jpg',
   width: 200,
   height: 200,
@@ -86,7 +86,7 @@ SmartImage(
 ### Gradient Color Overlay
 
 ```dart
-SmartImage(
+OmniImage(
   image: 'assets/icons/heart.svg',
   width: 48,
   height: 48,
@@ -97,7 +97,7 @@ SmartImage(
 ### Custom Error & Placeholder
 
 ```dart
-SmartImage(
+OmniImage(
   image: 'https://example.com/photo.jpg',
   width: 100,
   height: 100,
@@ -108,7 +108,7 @@ SmartImage(
 
 ## 🔧 Parameters
 
-### `SmartImage`
+### `OmniImage`
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -122,7 +122,7 @@ SmartImage(
 | `errorWidget` | `Widget?` | `SizedBox` | Shown on load error |
 | `placeholderWidget` | `Widget?` | `SizedBox` | Shown while loading (.vec) |
 
-### `SmartNetworkImage`
+### `OmniNetworkImage`
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -137,9 +137,9 @@ SmartImage(
 
 ## 🏗️ How It Works
 
-`SmartImage` automatically detects the image type by:
+`OmniImage` automatically detects the image type by:
 
-1. Checking if the URL starts with `http://` or `https://` → uses `SmartNetworkImage`
+1. Checking if the URL starts with `http://` or `https://` → uses `OmniNetworkImage`
 2. Reading the file extension → picks the right renderer:
    - `.vec` → `VectorGraphic` (fastest)
    - `.svg` → `SvgPicture`
