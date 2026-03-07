@@ -8,15 +8,15 @@ import 'package:flutter/material.dart';
 ///
 /// Example:
 /// ```dart
-/// SmartNetworkImage(
+/// OmniNetworkImage(
 ///   image: 'https://example.com/photo.jpg',
 ///   width: 100,
 ///   height: 100,
 ///   radius: 12,
 /// )
 /// ```
-class SmartNetworkImage extends StatelessWidget {
-  const SmartNetworkImage({
+class OmniNetworkImage extends StatelessWidget {
+  const OmniNetworkImage({
     super.key,
     required this.image,
     this.fit,

@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vector_graphics/vector_graphics.dart';
-import 'package:smart_image/src/smart_network_image.dart';
+import 'package:omni_image/src/omni_network_image.dart';
 
 /// A universal image widget that handles asset images (PNG, JPG, WebP, SVG, VEC)
 /// and network images, with optional gradient color support.
 ///
 /// Example:
 /// ```dart
-/// SmartImage(
+/// OmniImage(
 ///   image: 'assets/icons/home.svg',
 ///   width: 24,
 ///   height: 24,
 ///   color: Colors.blue,
 /// )
 /// ```
-class SmartImage extends StatelessWidget {
-  const SmartImage({
+class OmniImage extends StatelessWidget {
+  const OmniImage({
     super.key,
     required this.image,
     this.fit,
@@ -133,7 +133,7 @@ class SmartImage extends StatelessWidget {
   }
 
   Widget _buildNetworkImage() {
-    final imageWidget = SmartNetworkImage(
+    final imageWidget = OmniNetworkImage(
       image: image,
       fit: fit,
       height: height,
