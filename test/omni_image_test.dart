@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:omni_image/omni_image.dart';
 
 void main() {
@@ -17,6 +18,31 @@ void main() {
         ),
       );
       expect(find.byType(OmniImage), findsOneWidget);
+    });
+
+    testWidgets('forwards memory cache resize options to network image', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(
+            body: OmniImage(
+              image: 'https://example.com/image.png',
+              width: 120,
+              height: 80,
+              memCacheWidth: 600,
+              memCacheHeight: 400,
+            ),
+          ),
+        ),
+      );
+
+      final cachedNetworkImage = tester.widget<CachedNetworkImage>(
+        find.byType(CachedNetworkImage),
+      );
+
+      expect(cachedNetworkImage.memCacheWidth, 600);
+      expect(cachedNetworkImage.memCacheHeight, 400);
     });
 
     testWidgets('renders errorWidget when provided', (tester) async {

@@ -26,6 +26,8 @@ class OmniNetworkImage extends StatelessWidget {
     this.color,
     this.errorWidget,
     this.placeholder,
+    this.memCacheWidth,
+    this.memCacheHeight,
   });
 
   /// The network URL of the image.
@@ -52,6 +54,16 @@ class OmniNetworkImage extends StatelessWidget {
   /// Widget to show while image is loading.
   final Widget? placeholder;
 
+  /// Decoded image width to store in memory cache.
+  ///
+  /// Lower values reduce RAM usage for very large images.
+  final int? memCacheWidth;
+
+  /// Decoded image height to store in memory cache.
+  ///
+  /// Lower values reduce RAM usage for very large images.
+  final int? memCacheHeight;
+
   @override
   Widget build(BuildContext context) {
     Widget imageWidget = CachedNetworkImage(
@@ -59,6 +71,8 @@ class OmniNetworkImage extends StatelessWidget {
       width: width,
       imageUrl: image,
       fit: fit ?? BoxFit.cover,
+      memCacheWidth: memCacheWidth,
+      memCacheHeight: memCacheHeight,
       placeholder: placeholder != null ? (context, url) => placeholder! : null,
       errorWidget: errorWidget != null
           ? (context, url, error) => errorWidget!

@@ -27,6 +27,8 @@ class OmniImage extends StatelessWidget {
     this.radius,
     this.errorWidget,
     this.placeholderWidget,
+    this.memCacheWidth,
+    this.memCacheHeight,
   });
 
   /// The image path (asset) or URL (network).
@@ -58,6 +60,12 @@ class OmniImage extends StatelessWidget {
   /// Widget to show while image is loading (used for .vec format).
   /// Defaults to an empty [SizedBox] with the given dimensions.
   final Widget? placeholderWidget;
+
+  /// Decoded network image width to store in memory cache.
+  final int? memCacheWidth;
+
+  /// Decoded network image height to store in memory cache.
+  final int? memCacheHeight;
 
   @override
   Widget build(BuildContext context) {
@@ -141,6 +149,8 @@ class OmniImage extends StatelessWidget {
       radius: radius,
       color: color,
       errorWidget: errorWidget,
+      memCacheWidth: memCacheWidth,
+      memCacheHeight: memCacheHeight,
     );
 
     return _applyGradient(imageWidget);

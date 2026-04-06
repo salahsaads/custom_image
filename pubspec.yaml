@@ -1,6 +1,6 @@
 name: omni_image
 description: A flexible Flutter image widget supporting SVG, VectorGraphics, network, and asset images with gradient color support.
-version: 0.0.4
+version: 0.0.5
 
 homepage: https://github.com/salahsaads/custom_image
 repository: https://github.com/salahsaads/custom_image
